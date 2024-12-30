@@ -563,7 +563,7 @@ def main():
         col1, col2 = st.columns(2)
         
         with col1:
-            if st.button("Load Existing Index", use_container_width=True):
+            if st.button("Load Previous Documents", use_container_width=True):
                 try:
                     embeddings = HuggingFaceEmbeddings(
                         model_name="sentence-transformers/all-mpnet-base-v2",
@@ -573,9 +573,9 @@ def main():
                     hybrid_kb = HybridKnowledgeBase.load(embedding_model=embeddings)
                     st.session_state.hybrid_kb = hybrid_kb
                     st.session_state.conversation = create_conversation_chain(hybrid_kb)
-                    st.success("Successfully loaded existing index!")
+                    st.success("Successfully loaded previous documents!")
                 except FileNotFoundError:
-                    st.error("No existing index found. Please process documents first.")
+                    st.error("No previous documents found. Please Upload & process documents first.")
                 except Exception as e:
                     st.error(f"Error loading index: {str(e)}")
         
