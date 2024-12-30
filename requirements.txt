@@ -12,3 +12,4 @@ transformers
 faiss-cpu
 networkx
 matplotlib
+langchain_community
