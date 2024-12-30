@@ -13,3 +13,5 @@ faiss-cpu
 networkx
 matplotlib
 langchain_community
+langchain_huggingface
+langchain_openai
