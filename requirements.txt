@@ -1,0 +1,14 @@
+streamlit
+langchain
+sentence-transformers
+numpy
+pypdf
+python-docx
+pandas
+openpyxl
+unstructured
+torch
+transformers
+faiss-cpu
+networkx
+matplotlib
