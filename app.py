@@ -519,8 +519,15 @@ def display_welcome_screen():
             <div style='text-align: center; padding: 2rem; margin: 2rem;'>
                 <div style='background-color: #E3BBED; border-radius: 50%; width: 150px; height: 150px; 
                           margin: 0 auto; display: flex; align-items: center; justify-content: center;
-                          border: 2px solid #673DB0;'>
-                    <span style='font-size: 2rem; color: #673DB0;'>EaseAI</span>
+                          border: 3px solid #673DB0;
+                          box-shadow: 0 4px 8px rgba(103, 61, 176, 0.2);'>
+                    <span style='font-size: 2rem; color: #673DB0; 
+                               font-weight: 800; 
+                               font-family: "Arial Black", "Helvetica", sans-serif;
+                               text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+                               letter-spacing: 1px;'>
+                        EaseAI
+                    </span>
                 </div>
                 <div style='margin-top: 1rem; font-size: 1.5rem; color: #666;'>
                     Welcome to EaseworkAI
@@ -528,7 +535,7 @@ def display_welcome_screen():
                 <div style='margin-top: 0.5rem; color: #888; font-size: 1rem;'>
                     Upload your documents and start asking questions!
                 </div>
-            </div>
+        </div>
         """, unsafe_allow_html=True)
 
 def main():
