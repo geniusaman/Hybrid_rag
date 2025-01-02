@@ -404,6 +404,7 @@ Question: {question}
  
 Remember to:
 - Avoid phrases like "based on the context" or "according to"
+- Keep it short and to the point.
 """
         return prompt
 
