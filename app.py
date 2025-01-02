@@ -385,7 +385,7 @@ class CustomHybridChain:
             history_text = "\nChat History:\n" + self._format_chat_history(chat_history)
         
         # Construct the full prompt
-        prompt = f"""Using the following context and chat history, answer the question. If you cannot find the answer in the context, say so.
+        prompt = f"""Using the following context and chat history, answer the question. If you cannot find the answer in the context, First Attempt to figure out the underlying logic within the content and generate a logical solution, If you still cannot figure it out, Then say so.
 
 Context:
 {context}
@@ -486,6 +486,7 @@ def display_message(is_user: bool, message: str, sources=None):
                     st.markdown(f"**Source {i+1}** from: {doc.metadata.get('source', 'Unknown')}")
                     st.markdown(doc.page_content)
                     st.divider()
+                    break
 
 def handle_chat_history_display(chat_history):
     """Safely handle chat history display"""
