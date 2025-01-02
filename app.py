@@ -385,15 +385,30 @@ class CustomHybridChain:
             history_text = "\nChat History:\n" + self._format_chat_history(chat_history)
         
         # Construct the full prompt
-        prompt = f"""Using the following context and chat history, answer the question. If you cannot find the answer in the context, First Attempt to figure out the underlying logic within the content and generate a logical solution, If you still cannot figure it out, Then say so.
+#         prompt = f"""Using the following context and chat history, answer the question. If you cannot find the answer in the context, First Attempt to figure out the underlying logic within the content and generate a logical solution, If you still cannot figure it out, Then say so.
 
-Context:
-{context}
-{history_text}
+# Context:
+# {context}
+# {history_text}
 
-Question: {question}
+# Question: {question}
 
-Answer:"""
+# Answer:"""
+        prompt = f"""You are having a natural conversation with a human. Incorporate relevant information from this context to help inform your responses, while maintaining a warm, conversational tone:
+
+   Context:
+  {context}
+  conversation history:
+  {history_text}
+
+ Question: {question}
+
+Remember to:
+- Respond naturally as you would in a flowing conversation
+- Avoid phrases like "based on the context" or "according to"
+- Connect ideas smoothly without explicitly referencing the context
+- Use a friendly, engaging tone
+"""
         return prompt
 
     def invoke(self, query_dict: Dict[str, Any]) -> Dict[str, Any]:
